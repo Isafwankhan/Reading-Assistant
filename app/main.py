@@ -1,3 +1,4 @@
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,6 +18,9 @@ from app.schemas import (
     QuizRequest,
     TextRequest,
 )
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(HERE)
 
 app = FastAPI(title="AI Reading Comfort Assistant")
 
@@ -150,9 +154,9 @@ def knowledge_graph(req: TextRequest):
 
 
 # ---------------- Serve frontend ----------------
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(PROJECT_ROOT, "frontend")), name="static")
 
 
 @app.get("/")
 def index():
-    return FileResponse("frontend/index.html")
+    return FileResponse(os.path.join(PROJECT_ROOT, "frontend", "index.html"))
