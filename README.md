@@ -1,5 +1,9 @@
 # AI Reading Comfort Assistant
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000?logo=vercel)](https://reading-assistant-six.vercel.app)
+
+**🌐 Live deployment:** [https://reading-assistant-six.vercel.app](https://reading-assistant-six.vercel.app)
+
 A FastAPI backend + single-page frontend that turns any article URL into a
 comfortable, AI-enhanced reading experience: clean Focus Mode extraction,
 smart chunking, multi-length summaries, reading-mode rewrites, difficulty
